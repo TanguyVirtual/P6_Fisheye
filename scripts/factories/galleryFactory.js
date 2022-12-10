@@ -1,9 +1,9 @@
 // Création du rendu de la page profil du photographe pour la galerie
 // eslint-disable-next-line
-function galleryFactory(data) {
+let galleryFactory = function (data) {
     const { photographerId, image, video, likes, title, id } = data;
 
-    function getMediaCard() {
+    let getMediaCard = function () {
         const article = document.createElement("article");
         article.setAttribute("data-id", id);
         article.className = "picture";
@@ -23,7 +23,7 @@ function galleryFactory(data) {
             picture.setAttribute("tabindex", "0");
 
             article.appendChild(picture);
-        } else {
+        } else if (video) {
             // Ajout d'une video
             const videoLink = `assets/SamplePhotos/${photographerId}/${video}`;
             const videos = document.createElement("video");
