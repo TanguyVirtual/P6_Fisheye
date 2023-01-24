@@ -23,6 +23,7 @@ async function displayProfil(photographers) {
     });
 }
 
+
 // MEDIAS
 // Fonction qui permet l'affichage des médias de galerie à partir du templating de la galerie
 async function displayMedia(medias) {
@@ -30,13 +31,24 @@ async function displayMedia(medias) {
 
     medias.forEach((media) => {
         if (media.photographerId === photographerId) {
-            const mediaFactory = galleryFactory(media); // eslint-disable-line
-            const mediaCardDOM = mediaFactory.getMediaCard();
+            const mediaFactory = new Media(media.photographerId, media.image, media.video, media.likes, media.title, media.id); // eslint-disable-line
+            const mediaCardDOM = mediaFactory.media();
             mediasContent.appendChild(mediaCardDOM);
         }
     });
 }
-
+/*
+async function displayMedia(medias) {
+    for (let i = 0; i < medias.length; i++) {
+        const media = medias[i];
+        if (media.photographerId === photographerId) {
+            const mediaFactory = new Media(media.photographerId, media.image, media.video, media.likes, media.title, media.id);
+            const mediaCardDOM = mediaFactory.media;
+            mediasContent.appendChild(mediaCardDOM);
+        }
+    }
+}
+*/
 // LIGHTBOX
 // Fonction qui permet l'affichage de la lightbox avec event au click en récupérant leur Id
 async function displayLightbox(medias) {

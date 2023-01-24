@@ -58,6 +58,8 @@ function counterLike(medias) {
     });
 }
 
+
+
 // TOTAL LIKES
 function likeTotal(medias) {
     const likes = [];
