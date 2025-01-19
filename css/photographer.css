@@ -8,20 +8,18 @@
 /* PROFIL DU PHOTOGRAPHE */
 .photograph-header {
     background-color: #FAFAFA;
-    height: auto;
-    margin: 0 10%;
+    height: 300px;
+    margin: 0 100px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    justify-content: space-between;
+    padding: 0 50px;
     flex-wrap: wrap;
     /* Ajout pour permettre l'adaptation sur petits écrans */
 }
 
 .photograph-header>* {
-    width: 100%;
-    text-align: center;
+    width: 33%;
 }
 
 .contact_button {
@@ -40,22 +38,24 @@
 .profil-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .profil-btn,
 .profil-img {
     display: flex;
+}
+
+.profil-btn {
     justify-content: center;
 }
 
 .profil-img {
-    justify-content: center;
+    justify-content: end;
 }
 
 #profil-picture {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -66,25 +66,24 @@
 }
 
 .photograph-header h1 {
-    font-size: 34px;
+    font-size: 64px;
     color: #D3573C;
     font-weight: normal;
 }
 
 .profil-location {
-    font-size: 18px;
+    font-size: 24px;
     color: #901C1C;
 }
 
 .profil-tagline {
-    font-size: 16px;
+    font-size: 18px;
     color: #525252;
-    margin-top: 10px;
 }
 
 /* FILTRE DE RECHERCHE  */
 #sort-nav {
-    margin: 25px 10%;
+    margin: 25px 100px;
 }
 
 #sort-select {
@@ -116,13 +115,13 @@
     flex-wrap: wrap;
     gap: 5%;
     margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 #photographer_gallery article {
-    width: 47%;
-    min-width: 300px;
+    width: 50%;
+    min-width: 370px;
     height: 350px;
     margin-bottom: 5%;
 }
@@ -131,6 +130,7 @@
     width: 100%;
     height: 90%;
     border-radius: 5px;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -255,8 +255,7 @@
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 80%;
-    max-width: 669px;
+    width: 669px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -329,10 +328,75 @@ form input {
     font-size: 24px;
 }
 
+/* POPUP PRIX ET LIKE */
+#popup {
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+    width: 376px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #db8876;
+    border-radius: 5px 5px 0 0;
+    font-size: 24px;
+    font-weight: bolder;
+    transition: 0.5s ease-in-out;
+}
+
+.popup-content {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+}
+
+.profil-like i {
+    margin-left: 5px;
+}
+
 /* RESPONSIVE PAGE PHOTOGRAPHE */
-@media screen and (max-width: 960px) {
+@media screen and (min-width : 1900px) {
+    #photographer_gallery {
+        gap: 4%;
+    }
+
+    #photographer_gallery article {
+        width: 22%;
+    }
+}
+
+@media screen and (max-width : 1200px) {
+    .profil-page header {
+        justify-content: center;
+    }
+
     .photograph-header {
-        flex-direction: column;
+        margin: 0 2%;
+    }
+
+    #sort-nav {
+        margin: 25px 2%;
+    }
+
+    #photographer_gallery {
+        margin: 2% 2%;
+    }
+}
+
+@media screen and (max-width : 1440px) {
+    #photographer_gallery article {
+        width: 47.5%;
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width : 960px) {
+    .photograph-header {
+        flex-direction: column-reverse;
         justify-content: center;
         height: auto;
         gap: 20px;
@@ -347,38 +411,9 @@ form input {
     .photograph-header .profil-card {
         text-align: center;
     }
-
-    .contact_button {
-        width: 150px;
-        height: 50px;
-        font-size: 16px;
-    }
-
-    #profil-picture {
-        width: 120px;
-        height: 120px;
-    }
-
-    .photograph-header h1 {
-        font-size: 30px;
-    }
-
-    .profil-location {
-        font-size: 18px;
-    }
-
-    .profil-tagline {
-        font-size: 16px;
-    }
 }
 
-@media screen and (max-width: 640px) {
-    .contact_button {
-        width: 100%;
-        height: 50px;
-        font-size: 16px;
-    }
-
+@media screen and (max-width : 640px) {
     #photographer_gallery article {
         width: 100%;
         margin-bottom: 50px;
