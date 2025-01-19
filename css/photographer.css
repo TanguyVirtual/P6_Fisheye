@@ -14,6 +14,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
+    flex-wrap: wrap;
+    /* Ajout pour permettre l'adaptation sur petits écrans */
 }
 
 .photograph-header>* {
@@ -356,11 +358,7 @@ form input {
     margin-left: 5px;
 }
 
-*:focus {
-    outline: 3px solid #D3573C;
-}
-
-/* RESPONSIVE PAGE PHOTOGRAPHE*/
+/* RESPONSIVE PAGE PHOTOGRAPHE */
 @media screen and (min-width : 1900px) {
     #photographer_gallery {
         gap: 4%;
@@ -424,5 +422,10 @@ form input {
     .lightbox-image,
     .lightbox-video {
         height: auto;
+    }
+
+    .modal {
+        width: 100%;
+        padding: 15px;
     }
 }
