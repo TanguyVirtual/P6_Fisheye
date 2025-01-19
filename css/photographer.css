@@ -8,14 +8,13 @@
 /* PROFIL DU PHOTOGRAPHE */
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
+    height: auto;
     margin: 0 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
     flex-wrap: wrap;
-    /* Ajout pour permettre l'adaptation sur petits écrans */
 }
 
 .photograph-header>* {
@@ -427,5 +426,18 @@ form input {
     .modal {
         width: 100%;
         padding: 15px;
+    }
+
+    .photograph-header .profil-tagline {
+        font-size: 16px;
+    }
+
+    .photograph-header h1 {
+        font-size: 30px;
+    }
+
+    .photograph-header {
+        margin: 0;
+        padding: 20px 10px;
     }
 }
